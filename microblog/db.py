@@ -1,3 +1,4 @@
+import os
 import datetime
 import markdown
 from peewee import (
@@ -11,8 +12,11 @@ from flask.cli import with_appcontext
 import boto3
 
 
+APP_NAME = os.environ['APP_NAME']
+ENV_NAME = os.environ['ENV_NAME']
+
 ssm = boto3.client('ssm')
-response = ssm.get_parameter(Name='/example-a/prod/mysqldb')
+response = ssm.get_parameter(Name=f'/{APP_NAME}/{ENV_NAME}/mysqldb')
 params = db_url.parse(response['Parameter']['Value'])
 database = MySQLDatabase(**params)
 

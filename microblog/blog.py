@@ -4,8 +4,8 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from flaskr.auth import login_required
-from flaskr.db import User, Post
+from microblog.auth import login_required
+from microblog.db import User, Post
 
 bp = Blueprint('blog', __name__)
 
