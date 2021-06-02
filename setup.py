@@ -22,7 +22,7 @@ setup(
         'python-dateutil==2.8.0',
         's3transfer==0.2.1',
         'six==1.13.0',
-        'urllib3==1.25.7',
+        'urllib3==1.26.5',
         'Werkzeug==0.16.0',
         'gunicorn==20.0.0',
         'appdynamics==4.5.8.0'
